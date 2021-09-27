@@ -1,0 +1,15 @@
+name: CompositeExample
+
+on: [push]
+
+jobs:
+  copy_files_job:
+    runs-on: ubuntu-latest
+    name: A job that copy files
+    steps:
+    - uses: actions/checkout@v2
+    
+    - run: podman --help
+      shell: bash
+    - run: echo " Selam , bitti"
+      shell: bash
