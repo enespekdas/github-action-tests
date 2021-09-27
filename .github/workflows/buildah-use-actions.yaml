@@ -15,7 +15,7 @@ jobs:
         PASSWORD: en.141220
         IMAGE_NAME: selam
         Repository_Project_Tag: action-test
-        Repository_Project_version: latest
+        Repository_Project_version: v1
     - run: echo  ${{ steps.DockerFileBuilder.outputs.Result }} 
       shell: bash
     - run: echo " Selam , bitti"
