@@ -1,0 +1,20 @@
+name: Shell Commands ## tüm workflow akışının adıdır. 
+
+on: [push, pull_request] ## tetikleneceği event tipi burada belirlenir. 
+
+jobs: ## yapılacak olan adımların başladığı yerdir. jobs key i ile tanımlanır.
+  run-shell-command:
+    runs-on: ubuntu-latest ## workflow'un çalışacağı işletim sistemi burada seçilir.
+    steps:
+      - name: echo a string
+        run: echo "Hello Worldsss !"
+      - name: multiline scrpit
+        run: |
+          node -v
+          npm -v
+      - name: Python Commands
+        run: |
+            import platform
+            print
+            (platform. processor)
+        shell: python
