@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: sudo buildah --help
+    - run: sudo buildah bud -t selam .
       shell: bash
     - run: echo " Selam , bitti"
       shell: bash
