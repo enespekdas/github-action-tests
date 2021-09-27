@@ -1,4 +1,4 @@
-FROM fedora:28
+FROM fedora:latest
 LABEL maintainer Emre Özkan <emreozkan@windowslive.com>
 
 RUN dnf install -y tar gzip gcc make \
