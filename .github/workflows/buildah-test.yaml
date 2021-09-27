@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: sudo buildah bud -t selam https://github.com/enespekdas/github-action-tests/blob/a602f97d021519d5cc463fe90e176237407c7bb5/Dockerfile
+    - run: sudo buildah bud -t selam https://github.com/${{ secrets.DOCKER_USERNAME }}/github-action-tests/blob/a602f97d021519d5cc463fe90e176237407c7bb5/Dockerfile
       shell: bash
     - name : image kontrol
       run: sudo buildah images
