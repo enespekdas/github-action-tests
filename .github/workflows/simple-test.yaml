@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: myCompositeAction
-      uses: enespekdas/github-composite-action-test
+      uses: enespekdas/github-composite-action-test@latest
       with:
         destinationFolder: '/whatever/folder'
     - run: echo Files copied ${{ steps.myCompositeAction.outputs.copied-files }} 
