@@ -1,0 +1,23 @@
+name: DockerFile Builder
+
+on: [push]
+
+jobs:
+  copy_files_job:
+    runs-on: ubuntu-latest
+    name: Build Dockerfile and Run
+    steps:
+    - uses: actions/checkout@v2
+    - id: DockerFileBuilder
+      uses: enespekdas/github-composite-action-test@v2.2
+      with:
+        destinationFolder: '/whatever/folder'
+        USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        PASSWORD: ${{ secrets.DOCKER_PASSWD }}
+        IMAGE_NAME: selam
+        Repository_Project_Tag: Composite-Action-Test
+        Repository_Project_version: latest
+    - run: echo  ${{ steps.DockerFileBuilder.outputs.Result }} 
+      shell: bash
+    - run: echo " Selam , bitti"
+      shell: bash
