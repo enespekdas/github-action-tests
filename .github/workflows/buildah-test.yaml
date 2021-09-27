@@ -24,7 +24,7 @@ jobs:
       run: sudo  podman run -it enespekdas/docker-test:latest
       shell: bash
     - name: podman push
-      run: sudo podman ps a
+      run: sudo podman ps -a
       shell: bash
     - run: echo " Selam , bitti"
       shell: bash
