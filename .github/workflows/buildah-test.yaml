@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: podman --help
+    - run: sudo podman --help
       shell: bash
     - run: echo " Selam , bitti"
       shell: bash
