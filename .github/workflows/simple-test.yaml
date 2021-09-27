@@ -1,20 +1,16 @@
-name: Shell Commands ## tüm workflow akışının adıdır. 
+name: CompositeExample
 
-on: [push, pull_request] ## tetikleneceği event tipi burada belirlenir. 
+on: [workflow_dispatch]
 
-jobs: ## yapılacak olan adımların başladığı yerdir. jobs key i ile tanımlanır.
-  run-shell-command:
-    runs-on: ubuntu-latest ## workflow'un çalışacağı işletim sistemi burada seçilir.
+jobs:
+  copy_files_job:
+    runs-on: ubuntu-latest
+    name: A job that copy files
     steps:
-      - name: echo a string
-        run: echo "Hello Worldsss !"
-      - name: multiline scrpit
-        run: |
-          node -v
-          npm -v
-      - name: Python Commands
-        run: |
-            import platform
-            print
-            (platform. processor)
-        shell: python
+    - uses: actions/checkout@v2
+    - id: myCompositeAction
+      uses: enespekdas/github-composite-action-test@v1
+      with:
+        destinationFolder: '/whatever/folder'
+    - run: echo Files copied ${{ steps.myCompositeAction.outputs.copied-files }} 
+      shell: bash
