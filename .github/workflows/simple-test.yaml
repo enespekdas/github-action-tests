@@ -1,6 +1,6 @@
 name: CompositeExample
 
-on: [workflow_dispatch]
+on: [push]
 
 jobs:
   copy_files_job:
