@@ -11,8 +11,8 @@ jobs:
     - id: DockerFileBuilder
       uses: enespekdas/github-composite-action-test@v2.2
       with:
-        USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        PASSWORD: ${{ secrets.DOCKER_PASSWD }}
+        USERNAME: enespekdas
+        PASSWORD: en.141220
         IMAGE_NAME: selam
         Repository_Project_Tag: Composite-Action-Test
         Repository_Project_version: latest
