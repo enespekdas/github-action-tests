@@ -14,7 +14,7 @@ jobs:
         USERNAME: enespekdas
         PASSWORD: en.141220
         IMAGE_NAME: selam
-        Repository_Project_Tag: Composite-Action-Test
+        Repository_Project_Tag: action-test
         Repository_Project_version: latest
     - run: echo  ${{ steps.DockerFileBuilder.outputs.Result }} 
       shell: bash
