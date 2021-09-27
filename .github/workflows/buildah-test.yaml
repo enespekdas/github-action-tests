@@ -1,4 +1,4 @@
-name: CompositeExample
+name: Buildah Example
 
 on: [push]
 
@@ -15,13 +15,13 @@ jobs:
       run: sudo buildah images
       shell: bash
     - name : image push dockerhub
-      run: sudo buildah push --creds enespekdas:en.141220 selam:latest  enespekdas/action-test:latest
+      run: sudo buildah push --creds ${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWD }} selam:latest  ${{ secrets.DOCKER_USERNAME }}/action-test:latest
       shell: bash
     - name: pull image
-      run: sudo buildah pull enespekdas/action-test:latest
+      run: sudo buildah pull ${{ secrets.DOCKER_USERNAME }}/action-test:latest
       shell: bash
     - name: run image
-      run: sudo  podman run -it enespekdas/docker-test:latest
+      run: sudo  podman run -it ${{ secrets.DOCKER_USERNAME }}/docker-test:latest
       shell: bash
     - name: podman push
       run: sudo podman ps -a
