@@ -11,5 +11,20 @@ jobs:
     
     - run: sudo buildah bud -t selam .
       shell: bash
+    - name : image kontrol
+      run: sudo buildah images
+      shell: bash
+    - name : image push dockerhub
+      run: sudo buildah push --creds enespekdas:en.141220 selam:latest  enespekdas/action-test:latest
+      shell: bash
+    - name: pull image
+      run: sudo buildah pull enespekdas/action-test:latest
+      shell: bash
+    - name: run image
+      run: sudo  podman run -it enespekdas/docker-test:latest
+      shell: bash
+    - name: podman push
+      run: sudo podman ps a
+      shell: bash
     - run: echo " Selam , bitti"
       shell: bash
