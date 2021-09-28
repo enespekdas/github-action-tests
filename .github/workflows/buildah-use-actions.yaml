@@ -12,7 +12,7 @@ jobs:
       uses: enespekdas/github-composite-action-test@v2.2
       with:
         USERNAME: enespekdas
-        PASSWORD: en.141220
+        PASSWORD: asdasd
         IMAGE_NAME: selam
         Repository_Project_Tag: action-test
         Repository_Project_version: latest
