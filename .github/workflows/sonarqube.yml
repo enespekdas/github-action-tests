@@ -1,0 +1,18 @@
+name: CompositeExample
+
+on: [pull_request]
+
+jobs:
+  copy_files_job:
+    runs-on: ubuntu-latest
+    name: A job that copy files
+    steps:
+    - uses: actions/checkout@v2
+    - id: myCompositeAction
+      uses: enespekdas/github-composite-action-test@v2.1
+      with:
+        destinationFolder: '/whatever/folder'
+    - run: echo Files copied ${{ steps.myCompositeAction.outputs.copied-files }} 
+      shell: bash
+    - run: echo " Selam , bitti"
+      shell: bash
