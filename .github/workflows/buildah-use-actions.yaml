@@ -1,6 +1,6 @@
 name: DockerFile Builder
 
-on: [pull_request]
+on: [push]
 
 jobs:
   copy_files_job:
@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: DockerFileBuilder
-      uses: enespekdas/github-composite-action-test@v2.2
+      uses: enespekdas/composite-action-buildah@v1
       with:
         USERNAME: enespekdas
         PASSWORD: asdasd
