@@ -1,9 +1,6 @@
-on:
-  push:
-    - beta
-    - production
+name: Secret Test
 
-name: Continuous Deployment
+on: [push]
 
 jobs:
   build:
